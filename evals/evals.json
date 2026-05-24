@@ -1,0 +1,17 @@
+{
+  "skill_name": "project-genesis-chain",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a new project from scratch for a small task board app. I want a full chain from idea to local repo, but stop before pushing anything.",
+      "expected_output": "Routes through constitution, product spec, clarification, architecture, tasks, bootstrap, implementation, validation, audit, and release-prep gates.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Dry-run the project genesis chain for an AI document classifier and show me the artifacts and skills that would be used.",
+      "expected_output": "Produces a dry-run route map and approval gates without creating repository files.",
+      "files": []
+    }
+  ]
+}

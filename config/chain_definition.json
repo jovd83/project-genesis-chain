@@ -1,0 +1,182 @@
+{
+  "_comment": "Chain definition for project-genesis-chain. Greenfield flow from product idea to release-ready local repository using existing specialist skills where possible.",
+  "chain_name": "project-genesis-chain",
+  "description": "Greenfield project creation: intake -> constitution -> product spec -> clarification -> architecture -> tasks -> bootstrap -> first slice -> verification -> hardening -> release prep",
+  "phases": [
+    {
+      "id": "intake",
+      "name": "Step 0 - Establish project intent, scope, and execution mode",
+      "skill": null,
+      "intent": "establish_project_intake",
+      "reason": "Capture project name, target directory, product goal, users, constraints, stack preferences, execution mode, and approval boundaries before creating artifacts.",
+      "risk": "low",
+      "pass_context_forward": true,
+      "query_suffix": "Create a concise project intake brief. Include project name, target path, product goal, primary users, non-goals, stack preferences, constraints, execution mode, approvals needed, and open questions. Do not create source files in the target project yet."
+    },
+    {
+      "id": "constitution",
+      "name": "Step 1 - Create project constitution",
+      "skill": "project-constitution-skill",
+      "intent": "create_project_constitution",
+      "reason": "Create governing principles for quality, architecture, tests, UX, security, release discipline, and skill routing.",
+      "risk": "low",
+      "pass_context_forward": true
+    },
+    {
+      "id": "product_backlog",
+      "name": "Step 2a - Generate epics and user stories",
+      "skill": "backlog-story-generator",
+      "intent": "generate_backlog_stories",
+      "reason": "Convert the product idea and constitution into structured epics, user stories, technical contracts, and traceability notes.",
+      "risk": "medium",
+      "pass_context_forward": true
+    },
+    {
+      "id": "acceptance_criteria",
+      "name": "Step 2b - Draft testable acceptance criteria",
+      "skill": "acceptance-criteria-designer",
+      "intent": "design_acceptance_criteria",
+      "reason": "Turn the highest-priority stories into testable acceptance criteria with explicit assumptions and coverage gaps.",
+      "risk": "low",
+      "pass_context_forward": true
+    },
+    {
+      "id": "clarification_review",
+      "name": "Step 3 - Analyze requirement testability and ambiguity",
+      "skill": "test-analysis-skill",
+      "intent": "analyze_requirements_for_testability",
+      "reason": "Review the draft requirements and criteria for ambiguity, missing NFRs, testability gaps, and delivery risks before architecture planning.",
+      "risk": "low",
+      "pass_context_forward": true,
+      "on_phase_complete": "hitl",
+      "_hitl_note": "Gate before architecture. Human should answer blocking questions or approve proceeding with documented assumptions."
+    },
+    {
+      "id": "architecture_plan",
+      "name": "Step 4 - Create greenfield architecture plan",
+      "skill": "greenfield-architecture-planner",
+      "intent": "plan_greenfield_architecture",
+      "reason": "Select architecture, stack, boundaries, data model, API contracts, UI architecture, deployment shape, security posture, and validation strategy.",
+      "risk": "medium",
+      "pass_context_forward": true
+    },
+    {
+      "id": "implementation_tasks",
+      "name": "Step 5 - Create implementation task plan",
+      "skill": "implementation-task-planner-skill",
+      "intent": "generate_implementation_tasks",
+      "reason": "Convert approved specification and architecture into ordered tasks with dependencies, test-first steps, file targets, validation commands, and skill-routing hints.",
+      "risk": "medium",
+      "pass_context_forward": true,
+      "on_phase_complete": "hitl",
+      "_hitl_note": "Gate before repository bootstrap and implementation. Human approves the plan, target path, and install/network actions."
+    },
+    {
+      "id": "repo_bootstrap",
+      "name": "Step 6 - Bootstrap repository skeleton",
+      "skill": "project-bootstrapper-skill",
+      "intent": "bootstrap_project_repository",
+      "reason": "Create the repository skeleton using stack-specific bootstrap skills when available, plus common docs, environment samples, and validation scaffolding.",
+      "risk": "high",
+      "pass_context_forward": true
+    },
+    {
+      "id": "first_slice_delivery",
+      "name": "Step 7 - Implement first vertical slice",
+      "skill": "new-feature-sdlc-skill",
+      "intent": "orchestrate_feature_delivery",
+      "reason": "Implement the approved first vertical slice using the bootstrapped repository, acceptance criteria, and implementation tasks.",
+      "risk": "high",
+      "pass_context_forward": true,
+      "query_suffix": "Treat this as the first approved feature in a newly bootstrapped repository. Implement only the first independently demonstrable vertical slice from the task plan. Keep source, tests, docs, and traceability aligned."
+    },
+    {
+      "id": "unit_validation",
+      "name": "Step 8a - Unit and component validation",
+      "skill": "stack-aware-unit-testing-skill",
+      "intent": "run_regression_tests",
+      "reason": "Run or add the repository-native unit and component tests for the implemented slice.",
+      "risk": "medium",
+      "pass_context_forward": true
+    },
+    {
+      "id": "api_contract_validation",
+      "name": "Step 8b - API and service contract validation",
+      "skill": "api-contract-sentinel",
+      "intent": "validate_api_contracts",
+      "reason": "Validate API contracts and service behavior when the architecture exposes REST, HTTP, event, or service boundaries.",
+      "risk": "medium",
+      "pass_context_forward": false,
+      "query_suffix": "If the bootstrapped project has no API or service boundary yet, state exactly: 'api contract validation: not applicable for this slice' and stop."
+    },
+    {
+      "id": "e2e_validation",
+      "name": "Step 8c - Browser or end-to-end validation",
+      "skill": "playwright-skill",
+      "intent": "implement_e2e_tests",
+      "reason": "Implement or run browser-level validation for user-facing flows when the project has a UI.",
+      "risk": "medium",
+      "pass_context_forward": false,
+      "query_suffix": "If the bootstrapped project has no browser UI yet, state exactly: 'e2e validation: not applicable for this slice' and stop."
+    },
+    {
+      "id": "responsive_validation",
+      "name": "Step 8d - Responsive validation",
+      "skill": "responsive-testing",
+      "intent": "run_responsive_tests",
+      "reason": "Validate responsive behavior for UI surfaces across the smallest useful viewport matrix.",
+      "risk": "medium",
+      "pass_context_forward": false,
+      "query_suffix": "If the project has no responsive UI surface yet, state exactly: 'responsive validation: not applicable for this slice' and stop."
+    },
+    {
+      "id": "accessibility_validation",
+      "name": "Step 8e - Accessibility validation",
+      "skill": "a11y-audit-agent-skill",
+      "intent": "audit_accessibility",
+      "reason": "Audit accessibility for UI surfaces introduced by the first slice.",
+      "risk": "medium",
+      "pass_context_forward": false,
+      "query_suffix": "If the project has no user-facing UI yet, state exactly: 'accessibility validation: not applicable for this slice' and stop."
+    },
+    {
+      "id": "automation_review",
+      "name": "Step 9 - Review automation quality and evidence",
+      "skill": "automated-test-reviewer",
+      "intent": "review_automation_quality",
+      "reason": "Review test evidence, coverage quality, gaps, and false-confidence risks across all validation phases.",
+      "risk": "low",
+      "pass_context_forward": true
+    },
+    {
+      "id": "hardening_audit",
+      "name": "Step 10 - Principal hardening audit",
+      "skill": "principal-audit-refactor",
+      "intent": "audit_codebase",
+      "reason": "Run an audit-first hardening pass before declaring the new project production-ready.",
+      "risk": "high",
+      "pass_context_forward": true,
+      "query_suffix": "Run audit mode only unless the human has explicitly approved refactoring. Focus on the first-slice codebase, generated architecture, dependency risk, security, testability, and maintainability."
+    },
+    {
+      "id": "release_prepare",
+      "name": "Step 11 - Prepare release artifacts",
+      "skill": "release-manager-skill",
+      "intent": "prepare_release",
+      "reason": "Prepare changelog, version plan, release notes, and repository readiness summary without publishing unless explicitly approved.",
+      "risk": "medium",
+      "pass_context_forward": false,
+      "query_suffix": "STOP BEFORE PUSHING TO GITHUB. Prepare local release artifacts, changelog entry, version plan, and readiness report, but do not push, tag, publish, or create a GitHub Release unless the human explicitly approves."
+    },
+    {
+      "id": "genesis_summary",
+      "name": "Step 12 - Deliver project genesis summary",
+      "skill": null,
+      "intent": "deliver_project_genesis_summary",
+      "reason": "Summarize all generated artifacts, code, verification evidence, risks, and next decisions.",
+      "risk": "low",
+      "pass_context_forward": false,
+      "query_suffix": "Produce a concise final project genesis report with: project summary, artifact paths, repository path, implemented slice, validation evidence, release readiness, blocked items, and recommended next actions. Base every claim on prior phase evidence."
+    }
+  ]
+}
