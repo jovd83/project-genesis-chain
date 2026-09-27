@@ -1,0 +1,78 @@
+[
+  {
+    "query": "I have a rough idea for a contractor scheduling SaaS. I want a dry run of the project chain first: product spec, architecture, task plan, repo bootstrap gate, and what approvals you would need before touching files.",
+    "should_trigger": true
+  },
+  {
+    "query": "Start a brand new local app called invoice-nudge from scratch. Use Python/FastAPI and Postgres, create the planning pack first, and stop before installing packages or initializing git.",
+    "should_trigger": true
+  },
+  {
+    "query": "Can you turn this product idea into a spec-to-repo workflow? It is a small inventory tracker for our warehouse team, and I need the route, artifacts, validation plan, and release-prep gates.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use an approval-gated SDLC chain for a new analytics dashboard. I need constitution, backlog, acceptance criteria, architecture, tasks, and a safe bootstrap plan under ./analytics-dashboard.",
+    "should_trigger": true
+  },
+  {
+    "query": "we need an MVP bootstrap for a greenfield CRM. please separate assumptions from confirmed requirements and tell me where project memory versus shared memory would live.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a new repository plan for a healthcare appointment tool, but pause on compliance questions before architecture or implementation because I do not know whether HIPAA applies.",
+    "should_trigger": true
+  },
+  {
+    "query": "I want a local first vertical slice for a new task board app, but only after the product spec, acceptance criteria, architecture, and explicit approval gates are in place.",
+    "should_trigger": true
+  },
+  {
+    "query": "Help me create a release-ready starter project from a napkin idea. Do not push, publish, deploy, or create remotes; I want a disciplined project genesis workflow.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build me a planning pack for a new AI document classifier: constitution, product spec, architecture, tasks, traceability, and the safe next step before repository bootstrap.",
+    "should_trigger": true
+  },
+  {
+    "query": "I have a React project already. Fix the broken login redirect in src/auth/LoginCallback.tsx and add a regression test.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review this existing repository for architecture problems and risky refactors. Do not create a new project; I only want an audit report.",
+    "should_trigger": false
+  },
+  {
+    "query": "Generate acceptance criteria for story US-243 about editing a customer address in our existing CRM backlog.",
+    "should_trigger": false
+  },
+  {
+    "query": "Set up Playwright tests for the checkout page in the app that is already in ./shop-web. The project exists and the spec is done.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a GitHub release from the current repo after reading CHANGELOG.md and tagging v1.4.2.",
+    "should_trigger": false
+  },
+  {
+    "query": "I need a quick scaffold command for Angular 21 with routing and SCSS. No product spec or SDLC chain, just the bare framework shell.",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize the architecture.md file in this project and point out unclear diagrams.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write unit tests for the pricing calculator using the existing Jest setup. Keep all work inside the current repo.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a shared-memory taxonomy for all agents so conventions can be reused across projects.",
+    "should_trigger": false
+  },
+  {
+    "query": "Migrate our existing REST Assured suite from JUnit 4 to JUnit 5 and update the CI report.",
+    "should_trigger": false
+  }
+]

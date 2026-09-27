@@ -1,0 +1,7 @@
+interface:
+  display_name: "Project Genesis Chain"
+  short_description: "Spec-driven new project orchestration"
+  default_prompt: "Use $project-genesis-chain to turn a raw project idea into an approval-gated plan, repository bootstrap, first slice, validation, and release-readiness path."
+
+policy:
+  allow_implicit_invocation: true

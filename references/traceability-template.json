@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "name": "[Project Name]",
+    "target_path": "[path or TBD]",
+    "mode": "dry-run | planning-only | full-run"
+  },
+  "sources": [
+    {
+      "id": "SRC-001",
+      "type": "user_prompt | decision | document | observed_code",
+      "summary": "[Source summary]",
+      "location": "[path, URL, or conversation reference]"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "ASM-001",
+      "statement": "[Assumption]",
+      "status": "proposed | approved | rejected | superseded",
+      "source_ids": ["SRC-001"],
+      "review_trigger": "[Trigger]"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "FR-001",
+      "statement": "[Requirement]",
+      "status": "confirmed | proposed | blocked",
+      "source_ids": ["SRC-001"],
+      "assumption_ids": []
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "AC-001",
+      "requirement_ids": ["FR-001"],
+      "summary": "[Criterion summary]",
+      "status": "draft | approved"
+    }
+  ],
+  "architecture_decisions": [
+    {
+      "id": "ADR-001",
+      "summary": "[Decision]",
+      "status": "proposed | accepted | rejected | superseded",
+      "requirement_ids": ["FR-001"],
+      "assumption_ids": []
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T-001",
+      "summary": "[Task]",
+      "requirement_ids": ["FR-001"],
+      "acceptance_criteria_ids": ["AC-001"],
+      "architecture_decision_ids": ["ADR-001"],
+      "validation_ids": ["VAL-001"],
+      "status": "proposed | approved | done | blocked"
+    }
+  ],
+  "validation": [
+    {
+      "id": "VAL-001",
+      "type": "unit | api | e2e | responsive | accessibility | audit | release",
+      "command_or_review": "[Command or review method]",
+      "status": "planned | run | skipped | not_applicable | failed",
+      "evidence": "[path or summary]"
+    }
+  ],
+  "release": {
+    "readiness": "not_started | blocked | ready",
+    "evidence_ids": [],
+    "blocked_items": []
+  }
+}

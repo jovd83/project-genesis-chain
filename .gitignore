@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Local runtime artifacts
+*.log
+*.tmp
+tmp/
+dist/
+.eval-workspace/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
