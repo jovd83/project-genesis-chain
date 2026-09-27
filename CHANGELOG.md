@@ -15,7 +15,7 @@ All notable changes to this repository are documented here. The format follows K
 ### Added
 - Templates in `references/`: constitution, product spec, architecture, tasks and traceability.
 - `scripts/validate_repo.py`, `scripts/grade_evals.py`, `evals/trigger-evals.json` and `agents/openai.yaml`.
-- CI workflow `.github/workflows/validate.yml` and a `.gitignore`.
+- CI workflow `.github/workflows/validate.yml` (`actions/checkout@v7`, `actions/setup-python@v7`) and a `.gitignore`.
 
 ## Earlier versions
 
