@@ -178,7 +178,7 @@ Project-local memory is persistent but scoped to one project. Do not promote it 
 
 ### Shared Memory
 
-Treat shared cross-agent memory as an external dependency. If the user asks to reuse a convention across many projects, call or hand off to a dedicated shared-memory skill. Do not embed shared-memory infrastructure in this skill.
+Treat shared cross-agent memory as external. If the user asks to reuse a convention across many projects, record it in the agent's own memory (for example CLAUDE.md or AGENTS.md). Do not embed shared-memory infrastructure in this skill.
 
 ## Approval Gates
 
